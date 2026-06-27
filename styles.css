@@ -260,11 +260,11 @@ font-weight: 500;
 margin-bottom: 0.6rem;
 }
 .ht-big {
-display: block;
-font-size: clamp(3.5rem, 11vw, 13rem);
-color: #fff;
-letter-spacing: -0.03em;
-line-height: 0.9;
+  display: block;
+  font-size: clamp(2.8rem, 13vw, 7.5rem);
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
 }
 .ht-accent {
 color: var(--gold2);
@@ -826,7 +826,7 @@ font-family: var(--f-head);
 font-weight: 800;
 font-size: clamp(1.8rem, 3.5vw, 3.4rem);
 color: var(--ink);
-line-height: 1.05;
+line-height: 1.2;
 margin-bottom: 0.6rem;
 }
 .section-sub {
@@ -1456,6 +1456,17 @@ xl  1441–1920px — large monitors
 
 /* ── xs: small phones ── */
 @media (max-width: 479px) {
+
+.ht-big {
+    font-size: clamp(2.2rem, 14vw, 3.5rem);
+    line-height: 0.95;
+  }
+  
+  .ht-small {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
+
 .sp-gold-row,
 .sp-support-row {
     grid-template-columns: 1fr 1fr;
@@ -1475,9 +1486,6 @@ xl  1441–1920px — large monitors
 }
 .hero-content {
     padding: 7rem 1.25rem 2.5rem;
-}
-.ht-big {
-    font-size: clamp(3rem, 18vw, 4.5rem);
 }
 .hero-foot {
     flex-direction: column;
@@ -1563,6 +1571,11 @@ footer {
 
 /* ── sm: large phones ── */
 @media (min-width: 480px) and (max-width: 768px) {
+
+.ht-big {
+    font-size: clamp(2.8rem, 12vw, 5rem);
+}
+
 .sp-support-row {
     grid-template-columns: repeat(2, 1fr);
 }
@@ -1703,9 +1716,6 @@ footer {
     --max-w-wide: min(1700px, 90vw);
     --pad-x: clamp(3rem, 5vw, 7rem);
 }
-.ht-big {
-    font-size: clamp(9rem, 12vw, 14rem);
-}
 .photo-mosaic {
     grid-template-rows: 240px 240px;
 }
@@ -1740,9 +1750,7 @@ body {
     font-size: 2.2rem;
     letter-spacing: 0.35em;
 }
-.ht-big {
-    font-size: clamp(12rem, 13vw, 18rem);
-}
+
 .hero-desc {
     font-size: 1.25rem;
     max-width: 680px;
@@ -1879,4 +1887,41 @@ body {
 
 .fs-link:hover::after {
   opacity: 1;
+}
+
+.cd-unit.r {
+  opacity: 0;
+  transform: translateY(30px) scale(0.85);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.cd-unit.r.on {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.n-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.n-logo-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+#hero {
+  min-height: unset;
+  padding-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.hero-content {
+  padding-bottom: clamp(1.5rem, 3vh, 2.5rem);
+}
+
+.hero-foot {
+  padding-top: clamp(1rem, 2vh, 1.75rem);
+  padding-bottom: clamp(1rem, 2vh, 1.75rem);
 }
