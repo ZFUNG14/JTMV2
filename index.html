@@ -47,6 +47,19 @@
     <!-- HERO -->
     <section id="hero">
       <div class="hero-bg">
+        <!-- Vertical image for mobile, horizontal for desktop -->
+        <picture>
+          <source media="(min-width: 769px)" srcset="background2.png" />
+          <img
+            class="hero-bg-img"
+            src="verticalBackground2.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </picture>
+        <div class="hero-bg-overlay"></div>
+
+        <!-- Keep existing circles -->
         <div class="hero-circle hc1"></div>
         <div class="hero-circle hc2"></div>
         <div class="hero-circle hc3"></div>
@@ -135,14 +148,16 @@
             Where <em>Malaysia</em><br />meets the world.
           </h2>
           <p class="about-p r r2">
-            Journey to Malaysia is an annual cultural celebration organised by
-            the Malaysian Student Association — a space where Malaysians away
-            from home can gather, and where curious locals can discover a
-            culture that's rich, vibrant, and incredibly warm.
+            Journey to Malaysia is a cultural celebration organised primarily by
+            the Malaysian students associations in Perth as well as Perth's
+            Consulate General of Malaysia. Journey to Malaysia is a space where
+            Malaysians away from home can gather, and the greater Perth
+            community can discover a culture that's rich, vibrant, and
+            incredibly warm.
           </p>
           <p class="about-p r r2">
             Whether you're missing the taste of home, looking for your
-            community, or just want to experience something genuinely special —
+            community, or just want to experience something genuinely special,
             this festival is for you.
           </p>
           <div class="about-pills r r3">
@@ -217,29 +232,6 @@
         </p>
       </div>
     </section>
-
-    <!-- COUNTDOWN -->
-    <div class="countdown-wrap">
-      <section id="countdown">
-        <div class="cd-label r">✦ Save the Date ✦</div>
-        <h2 class="cd-head r r1">Journey to Malaysia 2026<br />is coming.</h2>
-        <p class="cd-sub r r2">The best is yet to come... Stay Tuned!</p>
-        <div class="cd-units">
-          <div class="cd-unit r r1">
-            <span class="cd-n" id="d">??</span><span class="cd-l">Days</span>
-          </div>
-          <div class="cd-unit r r2">
-            <span class="cd-n" id="h">??</span><span class="cd-l">Hours</span>
-          </div>
-          <div class="cd-unit r r3">
-            <span class="cd-n" id="m">??</span><span class="cd-l">Mins</span>
-          </div>
-          <div class="cd-unit r r4">
-            <span class="cd-n" id="s">??</span><span class="cd-l">Secs</span>
-          </div>
-        </div>
-      </section>
-    </div>
 
     <!-- EXPERIENCE -->
     <section id="experience">
@@ -454,7 +446,13 @@
             way. Fill out the form and the team will be in touch!
           </p>
         </div>
-        <form id="form" class="r r1" onsubmit="handleSub(event)">
+        <form
+          id="form"
+          class="r r1"
+          onsubmit="handleSub(event)"
+          action="https://formspree.io/f/xlgynrop"
+          method="POST"
+        >
           <div class="form-row">
             <div class="fg">
               <label class="fl" for="fn">Full Name</label
@@ -463,6 +461,7 @@
                 type="text"
                 id="fn"
                 placeholder="Your full name"
+                name="name"
                 required
               />
             </div>
@@ -473,6 +472,7 @@
                 type="email"
                 id="em"
                 placeholder="your@email.com"
+                name="email"
                 required
               />
             </div>
@@ -480,7 +480,7 @@
           <div class="form-row">
             <div class="fg full">
               <label class="fl" for="ro">I'm interested as a...</label>
-              <select class="fs" id="ro" required>
+              <select class="fs" id="ro" name="role" required>
                 <option value="" disabled selected>Select your role</option>
                 <option>Volunteer</option>
                 <option>Food Vendor</option>
@@ -498,22 +498,22 @@
               ><textarea
                 class="ft"
                 id="msg"
+                name="message"
                 placeholder="Any details, ideas, or questions…"
               ></textarea>
             </div>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-gold">
-              Submit Interest ✦
-            </button>
+            <button type="submit" class="btn btn-gold">Submit Interest</button>
           </div>
+          <input type="text" name="_gotcha" style="display: none" />
         </form>
         <div id="form-ok">
           <span class="ok-emoji">🌟</span>
           <h3 class="ok-h">Terima kasih!</h3>
           <p class="ok-p">
-            We've received your interest. The committee will reach out soon —
-            selamat datang to the Journey to Malaysia family!
+            We've received your interest. The committee will reach out soon, and
+            welcome to the journey!
           </p>
         </div>
       </div>
@@ -614,11 +614,156 @@
       document.querySelectorAll(".r").forEach((el) => obs.observe(el));
 
       /* Form submit */
-      function handleSub(e) {
+      async function handleSub(e) {
         e.preventDefault();
-        document.getElementById("form").style.display = "none";
-        document.getElementById("form-ok").style.display = "block";
+        const form = document.getElementById("form");
+        const data = new FormData(form);
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" },
+          });
+
+          if (res.ok) {
+            form.style.display = "none";
+            document.getElementById("form-ok").style.display = "block";
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        } catch {
+          alert("Network error. Please check your connection.");
+        }
+      }
+
+      // Show popup after 2 seconds on first visit
+      window.addEventListener("DOMContentLoaded", () => {
+        const overlay = document.getElementById("popupOverlay");
+        const closeBtn = document.getElementById("popupClose");
+
+        // Only show once per session
+        if (!sessionStorage.getItem("popupSeen")) {
+          setTimeout(() => {
+            overlay.classList.add("open");
+            sessionStorage.setItem("popupSeen", "true");
+          }, 2000);
+        }
+
+        // Close on button
+        closeBtn.addEventListener("click", () => {
+          overlay.classList.remove("open");
+        });
+
+        // Close on overlay click outside box
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) overlay.classList.remove("open");
+        });
+
+        // Close on Escape key
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") overlay.classList.remove("open");
+        });
+      });
+
+      // Newsletter form submit
+      async function handlePopupSub(e) {
+        e.preventDefault();
+        const form = document.getElementById("popupForm");
+        const btn = form.querySelector(".popup-btn");
+
+        btn.textContent = "Sending...";
+        btn.disabled = true;
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+
+          if (res.ok) {
+            form.style.display = "none";
+            document.getElementById("popupOk").style.display = "block";
+          } else {
+            btn.textContent = "Try again";
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = "Try again";
+          btn.disabled = false;
+        }
       }
     </script>
+
+    <!-- COUNTDOWN POPUP -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-box">
+        <button class="popup-close" id="popupClose" aria-label="Close">
+          ✕
+        </button>
+
+        <!-- Top badge -->
+        <div class="popup-label">✦ Save the Date ✦</div>
+
+        <!-- Heading -->
+        <h2 class="popup-head">
+          Journey to Malaysia<br /><span>2026 is coming.</span>
+        </h2>
+        <p class="popup-sub">The best is yet to come... Stay Tuned!</p>
+
+        <!-- Countdown units -->
+        <div class="popup-units">
+          <div class="popup-unit">
+            <span class="cd-n" id="d">??</span>
+            <span class="cd-l">Days</span>
+          </div>
+          <div class="popup-unit">
+            <span class="cd-n" id="h">??</span>
+            <span class="cd-l">Hours</span>
+          </div>
+          <div class="popup-unit">
+            <span class="cd-n" id="m">??</span>
+            <span class="cd-l">Mins</span>
+          </div>
+          <div class="popup-unit">
+            <span class="cd-n" id="s">??</span>
+            <span class="cd-l">Secs</span>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="popup-divider"></div>
+
+        <!-- Newsletter -->
+        <p class="popup-nl-label">
+          Stay in the loop — get updates straight to your inbox.
+        </p>
+        <form
+          class="popup-form"
+          id="popupForm"
+          onsubmit="handlePopupSub(event)"
+          action="https://formspree.io/f/xykqjyqz"
+          method="POST"
+        >
+          <div class="popup-input-wrap">
+            <input
+              type="email"
+              class="popup-input"
+              id="popupEmail"
+              placeholder="your@email.com"
+              name="email"
+              required
+            />
+            <input type="text" name="_gotcha" style="display: none" />
+            <button type="submit" class="popup-btn">Notify Me</button>
+          </div>
+          <p class="popup-privacy">No spam. Unsubscribe anytime.</p>
+        </form>
+        <div class="popup-ok" id="popupOk">
+          🎉 <strong>Terima kasih!</strong> We'll keep you posted.
+        </div>
+      </div>
+    </div>
   </body>
 </html>
