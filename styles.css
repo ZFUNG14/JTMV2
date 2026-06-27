@@ -1925,3 +1925,18 @@ body {
   padding-top: clamp(1rem, 2vh, 1.75rem);
   padding-bottom: clamp(1rem, 2vh, 1.75rem);
 }
+
+.about-vid-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(15, 26, 20, 0.08); /* Uses your --ink color for shadow */
+  display: flex;
+}
+
+.about-vid {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
