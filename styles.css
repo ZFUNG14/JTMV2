@@ -1311,25 +1311,29 @@ margin: 0 auto;
 
 /* ── FOOTER ── */
 footer {
-background: var(--forest);
-padding: clamp(2rem, 3.5vw, 3rem) var(--pad-x);
+  background: var(--forest);
+  padding: clamp(3rem, 5vw, 5rem) var(--pad-x);
 }
 .ft-inner {
-max-width: var(--max-w);
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 2rem;
-flex-wrap: wrap;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
+
 .ft-brand {
   display: flex;
   align-items: center;
   font-family: var(--f-head);
   font-weight: 800;
-  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-size: clamp(1rem, 1.8vw, 1.6rem); /* reined in — no more wrapping */
   color: #fff;
+  gap: 0.75rem;
+  white-space: nowrap; /* prevents "Journey to" and "Malaysia" splitting */
+  flex-shrink: 0;
 }
 .ft-brand span {
 color: var(--gold2);
@@ -1851,12 +1855,11 @@ body {
 }
 
 .ft-logo {
-  width: 108px;
-  height: 108px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   border-radius: 50%;
-  vertical-align: middle;
-  margin-right: 0.75rem;
+  mix-blend-mode: screen;
   flex-shrink: 0;
 }
 .fs-link i {
@@ -2347,4 +2350,253 @@ body {
 .sp-logo-sm {
   max-height: 48px;  /* smaller for supporters */
   max-width: 75%;
+}
+
+.ft-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Partners centre column */
+.ft-partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;          /* more space between organised/partnered blocks */
+}
+
+
+.ft-partners-label {
+  font-size: 0.68rem;   /* slightly bigger label */
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);  /* more visible */
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.ft-partners-label::before,
+.ft-partners-label::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ft-partners-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.ft-partner-img {
+  height: 52px;         /* was 36px — bigger logos */
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;        /* no colour change, just slightly softer */
+  transition: opacity 0.2s;
+}
+
+.ft-partner-img:hover {
+  opacity: 1;
+}
+
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .ft-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .ft-partners {
+    width: 100%;
+  }
+
+  .ft-socials-wrap {
+    align-items: center;
+  }
+}
+
+* Contact Us right column */
+.ft-socials-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.85rem;
+}
+
+.ft-contact-label {
+  font-family: var(--f-head);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ft-contact-label::before,
+.ft-contact-label::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ft-socials {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.fs-link {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.ft-copy {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+
+footer {
+  background: var(--forest);
+  padding: clamp(3rem, 5vw, 5rem) var(--pad-x);
+}
+
+.ft-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap; /* force single row on desktop */
+}
+
+.ft-partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.ft-partners-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.ft-partners-label::before,
+.ft-partners-label::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ft-partners-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ft-partner-img {
+  height: 108px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.ft-partner-img:hover {
+  opacity: 1;
+}
+
+.ft-socials-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.ft-contact-label {
+  font-family: var(--f-head);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.ft-contact-label::before,
+.ft-contact-label::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Mobile — stack into columns */
+@media (max-width: 768px) {
+  .ft-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .ft-brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ft-socials-wrap {
+    align-items: center;
+    width: 100%;
+  }
 }
