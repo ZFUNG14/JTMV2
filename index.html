@@ -24,10 +24,9 @@
         Journey to Malaysia
       </a>
       <ul class="n-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#recap">2025 Recap</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#committee">Team</a></li>
+        <li><a href="#about" data-go-tab="about">About</a></li>
+        <li><a href="#recap" data-go-tab="recap">2025 Recap</a></li>
+        <li><a href="#team" data-go-tab="team">Team</a></li>
         <li class="n-pill"><a href="#join">Get Involved</a></li>
       </ul>
       <button class="n-burger" id="burger" aria-label="Open menu">
@@ -37,10 +36,9 @@
 
     <!-- MOBILE DRAWER -->
     <div class="n-drawer" id="drawer">
-      <a href="#about" class="drawer-link">About</a>
-      <a href="#recap" class="drawer-link">2025 Recap</a>
-      <a href="#experience" class="drawer-link">Experience</a>
-      <a href="#committee" class="drawer-link">Team</a>
+      <a href="#about" class="drawer-link" data-go-tab="about">About</a>
+      <a href="#recap" class="drawer-link" data-go-tab="recap">2025 Recap</a>
+      <a href="#team" class="drawer-link" data-go-tab="team">Team</a>
       <a href="#join" class="drawer-link drawer-cta">Get Involved</a>
     </div>
 
@@ -78,7 +76,9 @@
           won't forget!
         </p>
         <div class="hero-btns">
-          <a href="#recap" class="btn btn-gold">↓ Relive 2025</a>
+          <a href="#recap" class="btn btn-gold" data-go-tab="recap"
+            >↓ Relive 2025</a
+          >
           <a href="#join" class="btn btn-ghost">Get Involved</a>
         </div>
       </div>
@@ -139,276 +139,353 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="about-wrap">
-        <div>
-          <div class="lbl r">About the Festival</div>
-          <h2 class="about-h r r1">
-            Where <em>Malaysia</em><br />meets the world.
-          </h2>
-          <p class="about-p r r2">
-            Journey to Malaysia is a cultural celebration organised primarily by
-            Perth's Consulate General of Malaysia assited by the Journey to
-            Malaysia student committee. Journey to Malaysia is a space where
-            Malaysians away from home can gather, and the greater Perth
-            community can discover a culture that's rich, vibrant, and
-            incredibly warm.
-          </p>
-          <p class="about-p r r2">
-            Whether you're missing the taste of home, looking for your
-            community, or just want to experience something genuinely special,
-            this festival is for you.
-          </p>
-          <div class="about-pills r r3">
-            <span class="pill gold">🎭 Performances</span>
-            <span class="pill">🍜 Street Food</span>
-            <span class="pill red">🎨 Activities</span>
-            <span class="pill">🌺 Culture</span>
-            <span class="pill">🤝 Community</span>
-          </div>
-        </div>
-        <div class="about-vid-container r r4">
-          <video
-            class="about-vid"
-            src="trailer.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-          ></video>
-        </div>
+    <!-- TAB SWITCHER -->
+    <div class="tab-switcher-wrap" data-active="about">
+      <div class="tab-switcher">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="recap">2025 Recap</button>
+        <button class="tab-btn" data-tab="team">Team</button>
       </div>
-    </section>
+    </div>
 
-    <!-- 2025 RECAP -->
-    <section id="recap">
-      <div class="recap-grid-bg"></div>
-      <div class="recap-inner">
-        <div class="recap-top r">
-          <h2 class="recap-h">
-            <span>Looking back at</span>Journey to Malaysia<br />2025.
-          </h2>
-          <p class="recap-note">
-            Our inaugural festival brought together hundreds of students,
-            families, and locals for an unforgettable evening of culture and
-            community.
-          </p>
-        </div>
-        <div class="photo-mosaic">
-          <div class="pm-cell p1 r" data-l="Opening Ceremony">
-            <img
-              src="photos/opening.jpg"
-              alt="Opening Ceremony"
-              class="pm-img"
-            />
-          </div>
-
-          <div class="pm-cell p2 r r1" data-l="Traditional Dance">
-            <img
-              src="photos/performance4.jpg"
-              alt="Traditional Dance"
-              class="pm-img"
-            />
-          </div>
-
-          <div class="pm-cell p3 r r2" data-l="Food Bazaar">
-            <img src="photos/opening2.jpg" alt="Food Bazaar" class="pm-img" />
-          </div>
-
-          <div class="pm-cell p4 r r1" data-l="Henna Workshop">
-            <img
-              src="photos/performance.jpg"
-              alt="Henna Workshop"
-              class="pm-img"
-            />
-          </div>
-
-          <div class="pm-cell p5 r r2" data-l="Cultural Showcase">
-            <img
-              src="photos/performance7.jpg"
-              alt="Cultural Showcase"
-              class="pm-img"
-            />
-          </div>
-
-          <div class="pm-cell p6 r r3" data-l="Closing Night">
-            <img
-              src="photos/performance5.jpg"
-              alt="Closing Night"
-              class="pm-img"
-            />
-          </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="exp-header r">
-        <div class="lbl" style="justify-content: center">What We Bring</div>
-        <h2 class="section-h">Three pillars,<br />one Malaysia.</h2>
-        <p class="section-sub">
-          An immersive cultural experience unlike any other.
-        </p>
-      </div>
-      <div class="exp-cards">
-        <div class="ec r">
-          <span class="ec-num">01</span>
-          <div class="ec-top">
-            <div class="ec-ico g">🎭</div>
-            <span class="ec-tag g">Stage</span>
-          </div>
-          <h3 class="ec-title">Performances</h3>
-          <p class="ec-desc">
-            Watch breathtaking cultural acts live on stage — traditional dances,
-            live music, and modern Malaysian expression all in one night.
-          </p>
-          <div class="ec-items">
-            <div class="ec-item">Traditional Joget &amp; Zapin dances</div>
-            <div class="ec-item">Dikir Barat choral performance</div>
-            <div class="ec-item">Live music &amp; cultural acts</div>
-            <div class="ec-item">Modern Malaysian talent</div>
-          </div>
-        </div>
-        <div class="ec r r1">
-          <span class="ec-num">02</span>
-          <div class="ec-top">
-            <div class="ec-ico r">🍜</div>
-            <span class="ec-tag r">Food Bazaar</span>
-          </div>
-          <h3 class="ec-title">Authentic Food</h3>
-          <p class="ec-desc">
-            Nasi Lemak. Satay. Char Kuey Teow. Teh Tarik. A full Malaysian
-            street food experience curated by passionate local vendors.
-          </p>
-          <div class="ec-items">
-            <div class="ec-item">Nasi Lemak &amp; Rendang</div>
-            <div class="ec-item">Satay with peanut sauce</div>
-            <div class="ec-item">Char Kuey Teow &amp; Laksa</div>
-            <div class="ec-item">Teh Tarik &amp; desserts</div>
-          </div>
-        </div>
-        <div class="ec r r2">
-          <span class="ec-num">03</span>
-          <div class="ec-top">
-            <div class="ec-ico o">🎨</div>
-            <span class="ec-tag o">Interactive</span>
-          </div>
-          <h3 class="ec-title">Activities</h3>
-          <p class="ec-desc">
-            Try traditional games, get henna art, step into a traditional dress
-            photo booth, and explore hands-on cultural workshops.
-          </p>
-          <div class="ec-items">
-            <div class="ec-item">Intricate henna art sessions</div>
-            <div class="ec-item">Traditional game: Congkak</div>
-            <div class="ec-item">Batik &amp; craft workshops</div>
-            <div class="ec-item">Traditional dress photo booth</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMMITTEE -->
-    <section id="committee">
-      <div class="comm-inner">
-        <div class="comm-head r">
-          <div class="lbl" style="justify-content: center">
-            The People Behind It
-          </div>
-          <h2 class="section-h">Meet the Team.</h2>
-          <p class="section-sub" style="color: var(--mid)">
-            Dedicated students working tirelessly to bring Journey to Malaysia
-            to life.
-          </p>
-        </div>
-
-        <!-- Group photo -->
-        <div class="comm-photo-wrap r">
-          <img
-            src="photos/comm.JPG"
-            alt="Journey to Malaysia Committee"
-            class="comm-photo"
-          />
-        </div>
-
-        <!-- Chairman quote -->
-        <!-- Chairman quotes -->
-        <div class="comm-quotes r r1">
-          <div class="cq-inner">
-            <span class="cq-mark">"</span>
-            <blockquote class="cq-text">
-              Journey to Malaysia is more than an event. Instead, it's a love letter to
-              our culture, our home, and the community that keeps us connected
-              no matter how far we are from Malaysia.
-            </blockquote>
-            <div class="cq-attr">
-              <span class="cq-name">— Genevieve Cheng</span>
-              <span class="cq-role">Chairperson, Journey to Malaysia 2025</span>
+    <!-- TAB CONTENT: ABOUT -->
+    <div class="tab-panel active" id="tab-about">
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="about-wrap">
+          <div>
+            <div class="lbl r">About the Festival</div>
+            <h2 class="about-h r r1">
+              Where <em>Malaysia</em><br />meets the world.
+            </h2>
+            <p class="about-p r r2">
+              Journey to Malaysia is a cultural celebration organised primarily
+              by Perth's Consulate General of Malaysia assited by the Journey to
+              Malaysia student committee. Journey to Malaysia is a space where
+              Malaysians away from home can gather, and the greater Perth
+              community can discover a culture that's rich, vibrant, and
+              incredibly warm.
+            </p>
+            <p class="about-p r r2">
+              Whether you're missing the taste of home, looking for your
+              community, or just want to experience something genuinely special,
+              this festival is for you.
+            </p>
+            <div class="about-pills r r3">
+              <span class="pill gold">🎭 Performances</span>
+              <span class="pill">🍜 Street Food</span>
+              <span class="pill red">🎨 Activities</span>
+              <span class="pill">🌺 Culture</span>
+              <span class="pill">🤝 Community</span>
             </div>
           </div>
+          <div class="about-vid-container r r4">
+            <video
+              class="about-vid"
+              src="trailer.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
+        </div>
+      </section>
 
-          <div class="cq-inner">
-            <span class="cq-mark">"</span>
-            <blockquote class="cq-text">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, officia recusandae similique omnis mollitia harum reprehenderit optio delectus iure atque!
-            </blockquote>
-            <div class="cq-attr">
-              <span class="cq-name">— Ms Nur Eliza Jemal Zainal</span>
-              <span class="cq-role"
-                >Consulate General Perth 2025</span
-              >
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <div class="exp-header r">
+          <div class="lbl" style="justify-content: center">What We Bring</div>
+          <h2 class="section-h">Three pillars,<br />one Malaysia.</h2>
+          <p class="section-sub">
+            An immersive cultural experience unlike any other.
+          </p>
+        </div>
+        <div class="exp-cards">
+          <div class="ec r">
+            <span class="ec-num">01</span>
+            <div class="ec-top">
+              <div class="ec-ico g">🎭</div>
+              <span class="ec-tag g">Stage</span>
+            </div>
+            <h3 class="ec-title">Performances</h3>
+            <p class="ec-desc">
+              Watch breathtaking cultural acts live on stage — traditional
+              dances, live music, and modern Malaysian expression all in one
+              night.
+            </p>
+            <div class="ec-items">
+              <div class="ec-item">Traditional Joget &amp; Zapin dances</div>
+              <div class="ec-item">Dikir Barat choral performance</div>
+              <div class="ec-item">Live music &amp; cultural acts</div>
+              <div class="ec-item">Modern Malaysian talent</div>
+            </div>
+          </div>
+          <div class="ec r r1">
+            <span class="ec-num">02</span>
+            <div class="ec-top">
+              <div class="ec-ico r">🍜</div>
+              <span class="ec-tag r">Food Bazaar</span>
+            </div>
+            <h3 class="ec-title">Authentic Food</h3>
+            <p class="ec-desc">
+              Nasi Lemak. Satay. Char Kuey Teow. Teh Tarik. A full Malaysian
+              street food experience curated by passionate local vendors.
+            </p>
+            <div class="ec-items">
+              <div class="ec-item">Nasi Lemak &amp; Rendang</div>
+              <div class="ec-item">Satay with peanut sauce</div>
+              <div class="ec-item">Char Kuey Teow &amp; Laksa</div>
+              <div class="ec-item">Teh Tarik &amp; desserts</div>
+            </div>
+          </div>
+          <div class="ec r r2">
+            <span class="ec-num">03</span>
+            <div class="ec-top">
+              <div class="ec-ico o">🎨</div>
+              <span class="ec-tag o">Interactive</span>
+            </div>
+            <h3 class="ec-title">Activities</h3>
+            <p class="ec-desc">
+              Try traditional games, get henna art, step into a traditional
+              dress photo booth, and explore hands-on cultural workshops.
+            </p>
+            <div class="ec-items">
+              <div class="ec-item">Intricate henna art sessions</div>
+              <div class="ec-item">Traditional game: Congkak</div>
+              <div class="ec-item">Batik &amp; craft workshops</div>
+              <div class="ec-item">Traditional dress photo booth</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-<section id="sponsors">
-  <div class="sponsors-inner">
-    <div class="sponsors-head r">
-      <div class="lbl" style="justify-content: center">Our Supporters</div>
-      <h2 class="section-h">Partners & Sponsors</h2>
-      <p class="section-sub">Journey to Malaysia 2025 was made possible with the generous support of these organisations.</p>
+      </section>
     </div>
+    <!-- END TAB: ABOUT -->
 
-    <!-- Row 1: Main supporters -->
-    <div class="sp-logo-row r r1">
-      <img src="logo/sponsors/AMBC.png" alt="AMBC" class="sp-bare-img" />
-      <img src="logo/sponsors/UEM.png" alt="UEM" class="sp-bare-img" />
-      <img src="logo/sponsors/MH.png" alt="Malaysia Airlines" class="sp-bare-img" />
-      <img src="logo/sponsors/food.png" alt="Food Partner" class="sp-bare-img" />
+    <!-- TAB CONTENT: RECAP -->
+    <div class="tab-panel" id="tab-recap">
+      <!-- 2025 RECAP -->
+      <section id="recap">
+        <div class="recap-grid-bg"></div>
+        <div class="recap-inner">
+          <div class="recap-top r">
+            <h2 class="recap-h">
+              <span>Looking back at</span>Journey to Malaysia<br />2025.
+            </h2>
+            <p class="recap-note">
+              Our inaugural festival brought together hundreds of students,
+              families, and locals for an unforgettable evening of culture and
+              community.
+            </p>
+          </div>
+          <div class="photo-mosaic">
+            <div class="pm-cell p1 r" data-l="Opening Ceremony">
+              <img
+                src="photos/opening.jpg"
+                alt="Opening Ceremony"
+                class="pm-img"
+              />
+            </div>
+
+            <div class="pm-cell p2 r r1" data-l="Traditional Dance">
+              <img
+                src="photos/performance4.jpg"
+                alt="Traditional Dance"
+                class="pm-img"
+              />
+            </div>
+
+            <div class="pm-cell p3 r r2" data-l="Food Bazaar">
+              <img src="photos/opening2.jpg" alt="Food Bazaar" class="pm-img" />
+            </div>
+
+            <div class="pm-cell p4 r r1" data-l="Henna Workshop">
+              <img
+                src="photos/performance.jpg"
+                alt="Henna Workshop"
+                class="pm-img"
+              />
+            </div>
+
+            <div class="pm-cell p5 r r2" data-l="Cultural Showcase">
+              <img
+                src="photos/performance7.jpg"
+                alt="Cultural Showcase"
+                class="pm-img"
+              />
+            </div>
+
+            <div class="pm-cell p6 r r3" data-l="Closing Night">
+              <img
+                src="photos/performance5.jpg"
+                alt="Closing Night"
+                class="pm-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+    <!-- END TAB: RECAP -->
 
-    <!-- Row 2: Food & vendors -->
-    <div class="sp-logo-row r r1">
-      <img src="logo/sponsors/vendors/LepakSatayCorner.png" alt="Lepak Satay Corner" class="sp-bare-img" />
-      <img src="logo/sponsors/vendors/PenangDollah.png" alt="Penang Dollah" class="sp-bare-img" />
-      <img src="logo/sponsors/vendors/SedapPlace.png" alt="Sedap Place" class="sp-bare-img" />
-            <img src="logo/sponsors/vendors/karache.png" alt="Karache" class="sp-bare-img" />
+    <!-- TAB CONTENT: TEAM -->
+    <div class="tab-panel" id="tab-team">
+      <!-- COMMITTEE -->
+      <section id="committee">
+        <div class="comm-inner">
+          <div class="comm-head r">
+            <div class="lbl" style="justify-content: center">
+              The People Behind It
+            </div>
+            <h2 class="section-h">Meet the Team.</h2>
+            <p class="section-sub" style="color: var(--mid)">
+              Dedicated students working tirelessly to bring Journey to Malaysia
+              to life.
+            </p>
+          </div>
 
+          <!-- Group photo -->
+          <div class="comm-photo-wrap r">
+            <img
+              src="photos/comm.JPG"
+              alt="Journey to Malaysia Committee"
+              class="comm-photo"
+            />
+          </div>
+
+          <!-- Chairman quote -->
+          <!-- Chairman quotes -->
+          <div class="comm-quotes r r1">
+            <div class="cq-inner">
+              <span class="cq-mark">"</span>
+              <blockquote class="cq-text">
+                Journey to Malaysia is more than an event. Instead, it's a love
+                letter to our culture, our home, and the community that keeps us
+                connected no matter how far we are from Malaysia.
+              </blockquote>
+              <div class="cq-attr">
+                <span class="cq-name">— Genevieve Cheng</span>
+                <span class="cq-role"
+                  >Chairperson, Journey to Malaysia 2025</span
+                >
+              </div>
+            </div>
+
+            <div class="cq-inner">
+              <span class="cq-mark">"</span>
+              <blockquote class="cq-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Distinctio, officia recusandae similique omnis mollitia harum
+                reprehenderit optio delectus iure atque!
+              </blockquote>
+              <div class="cq-attr">
+                <span class="cq-name">— Ms Nur Eliza Jemal Zainal</span>
+                <span class="cq-role">Consulate General Perth 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sponsors">
+        <div class="sponsors-inner">
+          <div class="sponsors-head r">
+            <div class="lbl" style="justify-content: center">
+              Our Supporters
+            </div>
+            <h2 class="section-h">Partners & Sponsors</h2>
+            <p class="section-sub">
+              Journey to Malaysia 2025 was made possible with the generous
+              support of these organisations.
+            </p>
+          </div>
+
+          <!-- Row 1: Main supporters -->
+          <div class="sp-logo-row r r1">
+            <img src="logo/sponsors/AMBC.png" alt="AMBC" class="sp-bare-img" />
+            <img src="logo/sponsors/UEM.png" alt="UEM" class="sp-bare-img" />
+            <img
+              src="logo/sponsors/MH.png"
+              alt="Malaysia Airlines"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/food.png"
+              alt="Food Partner"
+              class="sp-bare-img"
+            />
+          </div>
+
+          <!-- Row 2: Food & vendors -->
+          <div class="sp-logo-row r r1">
+            <img
+              src="logo/sponsors/vendors/LepakSatayCorner.png"
+              alt="Lepak Satay Corner"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/vendors/PenangDollah.png"
+              alt="Penang Dollah"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/vendors/sedapPlace.png"
+              alt="Sedap Place"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/vendors/karache.png"
+              alt="Karache"
+              class="sp-bare-img"
+            />
+          </div>
+
+          <div class="sp-logo-row r r2">
+            <img
+              src="logo/sponsors/vendors/MichelleMok.png"
+              alt="Michelle Mok"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/vendors/WAPhotobooth.png"
+              alt="WA Photobooth"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/vendors/My Sataylicious Logo.png"
+              alt="My Sataylicious"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/vendors/bungaraya.jpg"
+              alt="Bunga Raya"
+              class="sp-bare-img"
+            />
+            <img
+              src="logo/sponsors/vendors/SupMeletup.png"
+              alt="Sup Meletup"
+              class="sp-bare-img"
+            />
+          </div>
+
+          <!-- CTA -->
+          <div class="sp-cta r">
+            <div class="sp-cta-text">
+              <h3>Interested in sponsoring Journey to Malaysia 2026?</h3>
+              <p>
+                We offer a range of partnership packages. From logo placement
+                and dedicated stalls to on-stage recognition and social media
+                shoutouts.
+              </p>
+            </div>
+            <a href="#join" class="btn btn-gold">Become a Sponsor →</a>
+          </div>
+        </div>
+      </section>
+      <!-- JOIN -->
     </div>
+    <!-- END TAB: TEAM -->
 
-    <div class="sp-logo-row r r2">
-
-      <img src="logo/sponsors/vendors/MichelleMok.png" alt="Michelle Mok" class="sp-bare-img" />
-      <img src="logo/sponsors/vendors/WAPhotobooth.png" alt="WA Photobooth" class="sp-bare-img" />
-      <img src="logo/sponsors/vendors/My Sataylicious Logo.png" alt="My Sataylicious" class="sp-bare-img" />
-      <img src="logo/sponsors/vendors/bungaraya.jpg" alt="Bunga Raya" class="sp-bare-img" />
-      <img src="logo/sponsors/vendors/supmeletup.png" alt="Sup Meletup" class="sp-bare-img" />
-    </div>
-
-    <!-- CTA -->
-    <div class="sp-cta r">
-      <div class="sp-cta-text">
-        <h3>Interested in sponsoring Journey to Malaysia 2026?</h3>
-        <p>We offer a range of partnership packages — from logo placement and dedicated stalls to on-stage recognition and social media shoutouts.</p>
-      </div>
-      <a href="#join" class="btn btn-gold">Become a Sponsor →</a>
-    </div>
-
-  </div>
-</section>
-    <!-- JOIN -->
     <section id="join">
       <div class="join-grid-bg"></div>
       <div class="join-inner">
@@ -498,54 +575,91 @@
       </div>
     </section>
 
-<footer>
-  <div class="ft-inner">
+    <footer>
+      <div class="ft-inner">
+        <!-- 1. Logo + JTM Name -->
+        <div class="ft-brand">
+          <img
+            src="logo/logo.png"
+            alt="Journey to Malaysia logo"
+            class="ft-logo"
+          />
+          Journey to <span>Malaysia</span>
+        </div>
 
-    <!-- 1. Logo + JTM Name -->
-    <div class="ft-brand">
-      <img src="logo/logo.png" alt="Journey to Malaysia logo" class="ft-logo" />
-      Journey to <span>Malaysia</span>
-    </div>
+        <!-- 2. Organised By -->
+        <div class="ft-partners">
+          <p class="ft-partners-label">Organised by</p>
+          <div class="ft-partners-logos">
+            <img
+              src="logo/sponsors/CG.png"
+              alt="Consulate General of Malaysia"
+              class="ft-partner-img"
+            />
+          </div>
+        </div>
 
-    <!-- 2. Organised By -->
-    <div class="ft-partners">
-      <p class="ft-partners-label">Organised by</p>
-      <div class="ft-partners-logos">
-        <img src="logo/sponsors/CG.png" alt="Consulate General of Malaysia" class="ft-partner-img" />
+        <!-- 3. Partnered By -->
+        <div class="ft-partners">
+          <p class="ft-partners-label">Partnered by</p>
+          <div class="ft-partners-logos">
+            <img src="logo/sponsors/EMA.png" alt="EMA" class="ft-partner-img" />
+            <img
+              src="logo/sponsors/JTMLogo.png"
+              alt="Journey to Malaysia"
+              class="ft-partner-img"
+            />
+          </div>
+        </div>
+
+        <!-- 4. Contact Us -->
+        <div class="ft-socials-wrap">
+          <p class="ft-contact-label">Contact Us</p>
+          <div class="ft-socials">
+            <a
+              href="https://www.instagram.com/journeytomalaysia_perth/"
+              class="fs-link"
+              aria-label="Instagram"
+              target="_blank"
+              data-tip="Follow us on Instagram!"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/journeytomalaysiaperth"
+              class="fs-link"
+              aria-label="Facebook"
+              target="_blank"
+              data-tip="Follow us on Facebook!"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@journeytomalaysia_perth"
+              class="fs-link"
+              aria-label="TikTok"
+              target="_blank"
+              data-tip="Follow us on TikTok!"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a
+              href="mailto:journeytomalaysiaperth@gmail.com"
+              class="fs-link"
+              aria-label="Email"
+              target="_blank"
+              data-tip="Email Us!"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- 3. Partnered By -->
-    <div class="ft-partners">
-      <p class="ft-partners-label">Partnered by</p>
-      <div class="ft-partners-logos">
-        <img src="logo/sponsors/EMA.png" alt="EMA" class="ft-partner-img" />
-        <img src="logo/sponsors/JTMLogo.png" alt="Journey to Malaysia" class="ft-partner-img" />
-      </div>
-    </div>
-
-    <!-- 4. Contact Us -->
-    <div class="ft-socials-wrap">
-      <p class="ft-contact-label">Contact Us</p>
-      <div class="ft-socials">
-        <a href="https://www.instagram.com/journeytomalaysia_perth/" class="fs-link" aria-label="Instagram" target="_blank" data-tip="Follow us on Instagram!">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/journeytomalaysiaperth" class="fs-link" aria-label="Facebook" target="_blank" data-tip="Follow us on Facebook!">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://www.tiktok.com/@journeytomalaysia_perth" class="fs-link" aria-label="TikTok" target="_blank" data-tip="Follow us on TikTok!">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
-        <a href="mailto:journeytomalaysiaperth@gmail.com" class="fs-link" aria-label="Email" target="_blank" data-tip="Email Us!">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-
-  </div>
-  <p class="ft-copy">© 2025 Journey to Malaysia. All rights reserved.</p>
-</footer>
+      <p class="ft-copy">
+        © 2025 Journey to Malaysia. All rights reserved.
+        <!--<span class="ft-credit">— Site by <a href="https://zfung14.github.io/DigitalPortfolio/" target="_blank">Zi Fung</a></span>-->
+      </p>
+    </footer>
 
     <script>
       /* Nav scroll */
@@ -585,6 +699,78 @@
         { threshold: 0.1 },
       );
       document.querySelectorAll(".r").forEach((el) => obs.observe(el));
+
+      /* ── TAB SWITCHER ── */
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabPanels = document.querySelectorAll(".tab-panel");
+      const tabSwitcherWrap = document.querySelector(".tab-switcher-wrap");
+
+      function activateTab(tabName, { scrollToTop = true } = {}) {
+        // Update buttons
+        tabBtns.forEach((btn) =>
+          btn.classList.toggle("active", btn.dataset.tab === tabName),
+        );
+
+        // Update panels
+        tabPanels.forEach((panel) => {
+          const isMatch = panel.id === `tab-${tabName}`;
+          panel.classList.toggle("active", isMatch);
+        });
+
+        // Sync switcher background to match active tab's section
+        if (tabSwitcherWrap) {
+          tabSwitcherWrap.setAttribute("data-active", tabName);
+        }
+
+        // Re-trigger reveal animations for elements now visible
+        const activePanel = document.getElementById(`tab-${tabName}`);
+        if (activePanel) {
+          void activePanel.offsetHeight;
+          const elsToReveal = activePanel.querySelectorAll(".r");
+          // Reset then re-observe so IntersectionObserver fires again
+          elsToReveal.forEach((el) => {
+            el.classList.remove("on");
+            obs.unobserve(el);
+          });
+          // Small delay so display:block applies before re-observing
+          requestAnimationFrame(() => {
+            elsToReveal.forEach((el) => obs.observe(el));
+          });
+        }
+
+        // Update URL hash without triggering native scroll-to-anchor
+        history.replaceState(null, "", `#${tabName}`);
+
+        // Scroll to the tab switcher (not all the way to page top)
+        if (scrollToTop && tabSwitcherWrap) {
+          const offset =
+            tabSwitcherWrap.getBoundingClientRect().top +
+            window.scrollY -
+            (nav.classList.contains("up") ? 70 : 90);
+          window.scrollTo({ top: offset, behavior: "smooth" });
+        }
+      }
+
+      tabBtns.forEach((btn) =>
+        btn.addEventListener("click", () => activateTab(btn.dataset.tab)),
+      );
+
+      // Nav links / drawer links that should switch tabs
+      document.querySelectorAll("[data-go-tab]").forEach((link) =>
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          activateTab(link.dataset.goTab);
+        }),
+      );
+
+      // On page load, check the URL hash to open the right tab
+      window.addEventListener("DOMContentLoaded", () => {
+        const hash = window.location.hash.replace("#", "");
+        const validTabs = ["about", "recap", "team"];
+        if (validTabs.includes(hash)) {
+          activateTab(hash, { scrollToTop: false });
+        }
+      });
 
       /* Form submit */
       async function handleSub(e) {
