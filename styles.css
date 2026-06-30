@@ -49,9 +49,12 @@ justify-content: space-between;
 transition: all 0.35s;
 }
 nav.up {
-background: var(--forest);
-padding: 1rem var(--pad-x);
-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
+  background-image: 
+    linear-gradient(rgba(28, 61, 43, 0.88), rgba(28, 61, 43, 0.88)),
+    url("header.png");
+  background-repeat: repeat;
+  padding: 1rem var(--pad-x);
+  box-shadow: 0 1px 0 rgba(212, 146, 43, 0.35), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 .n-logo {
 font-family: var(--f-head);
@@ -121,7 +124,7 @@ width: 24px;
 height: 2px;
 background: #fff;
 border-radius: 2px;
-transition: all 0.3s;
+transition: all 0.5s ease; 
 }
 .n-burger.open span:nth-child(1) {
 transform: translateY(7px) rotate(45deg);
@@ -133,21 +136,28 @@ opacity: 0;
 transform: translateY(-7px) rotate(-45deg);
 }
 .n-drawer {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: var(--forest);
-z-index: 199;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 1.5rem;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--forest);
+  z-index: 199;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
 }
+
 .n-drawer.open {
-display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 .n-drawer a {
 color: rgba(255, 255, 255, 0.8);
@@ -2755,4 +2765,36 @@ footer {
     padding: 0.6rem 1.1rem;
     font-size: 0.65rem;
   }
+}
+
+.n-logo {
+  font-family: var(--f-head);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.n-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.n-logo-title {
+  font-weight: 800;
+  font-size: clamp(0.9rem, 1.8vw, 1.15rem);
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.n-logo-tagline {
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: clamp(0.55rem, 0.7vw, 0.65rem);
+  color: var(--gold2);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
