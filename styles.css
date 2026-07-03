@@ -51,7 +51,7 @@ transition: all 0.35s;
 nav.up {
   background-image: 
     linear-gradient(rgba(28, 61, 43, 0.88), rgba(28, 61, 43, 0.88)),
-    url("header.png");
+    url("media/background/header.png");
   background-repeat: repeat;
   padding: 1rem var(--pad-x);
   box-shadow: 0 1px 0 rgba(212, 146, 43, 0.35), 0 4px 24px rgba(0, 0, 0, 0.4);
