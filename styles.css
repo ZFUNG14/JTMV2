@@ -2798,3 +2798,43 @@ footer {
   text-transform: uppercase;
   opacity: 0.85;
 }
+
+.sp-logo-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-logo-item::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--forest);
+  color: #fff;
+  font-family: var(--f-head);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Show on hover (desktop) */
+.sp-logo-item:hover::after {
+  opacity: 1;
+}
+
+/* Show on touch/focus (mobile) */
+.sp-logo-item:focus-within::after,
+.sp-logo-item.touched::after {
+  opacity: 1;
+}
