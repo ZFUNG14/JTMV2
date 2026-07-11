@@ -3450,7 +3450,7 @@ footer {
 }
 
 /* Photo block */
-.rc-photo { position: relative; }
+.rc-photo { position: block; }
 
 .rc-img {
   width: 100%;
@@ -3973,4 +3973,72 @@ footer {
   aspect-ratio: 16 / 6;   /* wide cinematic crop */
   object-fit: cover;
   object-position: center 40%;
+}
+
+.rc-map-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;   /* was row — now stacks text above map */
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.rc-map-thumb {
+  position: relative;
+  display: block;
+  width: 100%;             
+  max-width: 100%;         
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: default;         
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rc-map-thumb a {
+  display: block;
+  cursor: zoom-in;
+  position: relative;
+}
+
+/* Fix 1 — restore background colour */
+.rc-map-section {
+  background: var(--bg2);
+  padding: var(--section-y) var(--pad-x);
+}
+
+/* Fix 2 — constrain image to a proper preview size */
+.rc-map-thumb-img {
+  width: 100%;
+  max-height: 6000px;       /* preview height cap */
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rc-map-thumb a:hover .rc-map-thumb-img {
+  transform: scale(1.01);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+}
+
+/* Fix 3 — hint badge positioning */
+.rc-map-hint {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(28,61,43,0.82);
+  color: rgba(255,255,255,0.85);
+  font-family: var(--f-head);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 100px;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
 }

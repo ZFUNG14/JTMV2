@@ -352,6 +352,27 @@ tourism between both regions. It’s where Malaysians and Australians come toget
 
       <section class="rc-split rc-split--light" style="display:none;"></section>
 
+
+            <!-- EVENT MAP -->
+<section class="rc-map-section">
+  <div class="rc-map-inner">
+    <div class="rc-text r">
+      <div class="lbl">Venue</div>
+      <h2 class="rc-h">Where it all<br />happened.</h2>
+      <p class="rc-p">JTM 2025 was situated at iconic Perth location, Forrest Chase CBD, stretching from the GPO Building down to Murray Street Mall.</p>
+    </div>
+    <div id="map-gallery" class="rc-map-thumb r r1">
+      <a href="media/photos/pix/about:2025/map.jpg"
+         data-pswp-width="2480"
+         data-pswp-height="1748"
+         data-cropped="false">
+        <img src="media/photos/pix/about:2025/map.jpg" alt="JTM 2025 Event Map" class="rc-map-thumb-img" />
+        <span class="rc-map-hint">Click to enlarge</span>
+      </a>
+    </div>
+  </div>
+</section>
+</div>
       <!-- PROGRAMME -->
       <section class="rc-programme">
         <div class="rc-programme-inner">
@@ -473,46 +494,6 @@ tourism between both regions. It’s where Malaysians and Australians come toget
           </div>
         </div>
       </section>
-
-      <!-- EVENT MAP -->
-      <section class="rc-split rc-split--muted">
-        <div class="rc-split-inner">
-          <div class="rc-text r">
-            <div class="lbl">Venue</div>
-            <h2 class="rc-h">Where it all<br />happened.</h2>
-            <p class="rc-p">Murray St Mall, Perth CBD — stretching from the GPO Building down to Forrest Chase. Seven food stalls, six activity booths, a main stage, and two seating zones.</p>
-            <div class="rc-vendor-cols">
-              <div>
-                <p class="rc-vendor-heading">Food Stalls</p>
-                <ol class="rc-vendor-list">
-                  <li>Karache by Sani</li>
-                  <li>Burger Satay Corner</li>
-                  <li>My Sataylicious</li>
-                  <li>Penang Dollah Kitchen</li>
-                  <li>Bunga Raya Satay</li>
-                  <li>Sedap Place</li>
-                  <li>Sup Meletup</li>
-                </ol>
-              </div>
-              <div>
-                <p class="rc-vendor-heading">Activities</p>
-                <ol class="rc-vendor-list">
-                  <li>Consulate-General of Malaysia</li>
-                  <li>Colouring &amp; Batik</li>
-                  <li>Photobooth</li>
-                  <li>Ministry of Agriculture</li>
-                  <li>Congkak &amp; Batu Seremban</li>
-                  <li>Badminton, Chapteh &amp; Sepak Takraw</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <div class="rc-photo r r1">
-            <img src="media/photos/pix/about:2025/map.jpg" alt="JTM 2025 Event Map" class="rc-img rc-img--map" />
-          </div>
-        </div>
-      </section>
-</div>
     <!-- END TAB: RECAP -->
 
     <!-- TAB CONTENT: TEAM -->
@@ -1247,6 +1228,24 @@ document.addEventListener('DOMContentLoaded', initPhotoSwipe);
 document.addEventListener('click', (e) => {
   if (e.target.closest('[data-go-tab="recap"]') || e.target.closest('[data-tab="recap"]')) {
     setTimeout(initPhotoSwipe, 150);
+  }
+});
+
+function initMapGallery() {
+  const mapLightbox = new PhotoSwipeLightbox({
+    gallery: '#map-gallery',
+    children: 'a[data-pswp-width]',
+    pswpModule: PhotoSwipe,
+    bgOpacity: 0.92,
+    showHideAnimationType: 'zoom',
+  });
+  mapLightbox.init();
+}
+
+document.addEventListener('DOMContentLoaded', initMapGallery);
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-go-tab="recap"]') || e.target.closest('[data-tab="recap"]')) {
+    setTimeout(initMapGallery, 150);
   }
 });
     </script>
