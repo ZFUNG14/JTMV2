@@ -3515,13 +3515,60 @@ footer {
 /* Programme section */
 .rc-programme {
   background: var(--forest);
-  padding: var(--section-y) 0 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 
+.rc-prog-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+}
+
+.rc-prog-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 30, 20, 0.78);
+  z-index: 1;
+}
+
+/* Background collage fills the section height */
+.rc-collage--bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  mask-image: none;
+  -webkit-mask-image: none;
+  opacity: 0.55;
+}
+
+.rc-collage--bg .rc-collage-row {
+  flex: 1;
+  overflow: hidden;
+}
+
+.rc-collage--bg .rc-collage-track {
+  height: 100%;
+}
+
+.rc-collage--bg .rc-col-img {
+  height: 100%;
+  width: auto;
+  min-width: 200px;
+}
+
+/* Timeline sits above the background */
 .rc-programme-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 var(--pad-x) var(--section-y);
+  padding: var(--section-y) var(--pad-x);
+  position: relative;
+  z-index: 2;
 }
 
 .rc-prog-header {
@@ -3636,11 +3683,11 @@ footer {
 }
 
 .rc-collage-row--right .rc-collage-track {
-  animation: rcScrollRight 32s linear infinite;
+  animation: rcScrollRight 48s linear infinite;
 }
 
 .rc-collage-row--left .rc-collage-track {
-  animation: rcScrollLeft 28s linear infinite;
+  animation: rcScrollLeft 48s linear infinite;
 }
 
 .rc-collage:hover .rc-collage-track {
@@ -4002,16 +4049,14 @@ footer {
   position: relative;
 }
 
-/* Fix 1 — restore background colour */
 .rc-map-section {
   background: var(--bg2);
   padding: var(--section-y) var(--pad-x);
 }
 
-/* Fix 2 — constrain image to a proper preview size */
 .rc-map-thumb-img {
   width: 100%;
-  max-height: 6000px;       /* preview height cap */
+  max-height: 1000px;     
   object-fit: cover;
   object-position: center top;
   display: block;
@@ -4025,7 +4070,6 @@ footer {
   box-shadow: 0 12px 36px rgba(0,0,0,0.18);
 }
 
-/* Fix 3 — hint badge positioning */
 .rc-map-hint {
   position: absolute;
   bottom: 0.75rem;
