@@ -16,6 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="icon" type="image/png" href="media/logo/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css" />
   </head>
   <body>
     <!-- NAV -->
@@ -272,95 +273,246 @@ tourism between both regions. It’s where Malaysians and Australians come toget
 
     <!-- TAB CONTENT: RECAP -->
     <div class="tab-panel" id="tab-recap">
-      <!-- 2025 RECAP -->
+
+      <!-- HEADER + OPENING CEREMONY -->
       <section id="recap">
         <div class="recap-grid-bg"></div>
         <div class="recap-inner">
-          <div class="recap-top r">
-            <h2 class="recap-h">
-              <span>Looking back at</span>Journey to Malaysia<br />2025.
-            </h2>
-            <p class="recap-note">
-              Our inaugural festival brought together hundreds of students,
-              families, and locals for an unforgettable evening of culture and
-              community.
-            </p>
+
+          <!-- Row 1: Heading + 3-photo collage + text, all on same row -->
+          <div class="recap-hero-row">
+
+            <div class="recap-hero-heading r">
+              <h2 class="recap-h">
+<span>Looking back at</span>Journey to Malaysia 2025.              </h2>
+            </div>
+
+            <div class="recap-hero-collage r r1" id="recap-gallery">
+
+  <div class="rhc-top">
+    <div class="rhc-cell">
+      <a href="media/photos/pix/about:2025/39.jpg"
+         data-pswp-width="3000"
+         data-pswp-height="2362"
+         data-cropped="true">
+        <img src="media/photos/pix/about:2025/39.jpg" alt="Opening Ceremony" class="rhc-img" />
+        <span class="rhc-label">Opening Ceremony by H.E. Ambassador Sharrina Abdullah</span>
+      </a>
+    </div>
+    <div class="rhc-cell">
+      <a href="media/photos/pix/about:2025/27.jpg"
+         data-pswp-width="3000"
+         data-pswp-height="2000"
+         data-cropped="true">
+        <img src="media/photos/pix/about:2025/27.jpg" alt="Mayor's Speech" class="rhc-img" />
+        <span class="rhc-label">Mayor's Speech</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="rhc-bottom">
+    <div class="rhc-cell rhc-cell--wide">
+      <a href="media/photos/pix/about:2025/1.jpg"
+         data-pswp-width="3000"
+         data-pswp-height="2000"
+         data-cropped="true">
+        <img src="media/photos/pix/about:2025/1.jpg" alt="Crowd" class="rhc-img" />
+        <span class="rhc-label">Welcome to Country Ceremony</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+            <div class="recap-hero-text r r2">
+              <div class="lbl" style="color:var(--gold2);">Opening Ceremony</div>
+              <h3 class="recap-hero-h">A historic first<br />for Perth.</h3>
+              <p class="recap-hero-p">
+                Graced by <strong>H.E. Ambassador Sharrina Abdullah</strong> and
+                <strong>Lord Mayor Bruce Reynolds</strong>. Perth's very first
+                dedicated Malaysian cultural festival begins.
+              </p>
+            </div>
+
           </div>
-          <div class="photo-mosaic">
-            <div class="pm-cell p1 r" data-l="Opening Ceremony">
-              <img
-                src="media/photos/pix/about:2025/1.jpg"
-                alt="Opening Ceremony"
-                class="pm-img"
-              />
-            </div>
 
-            <div class="pm-cell p2 r r1" data-l="Traditional Dance">
-              <img
-                src="media/photos/pix/about:2025/2.jpg"
-                alt="Traditional Dance"
-                class="pm-img"
-              />
-            </div>
+          <!-- Row 2: Full-width group photo -->
+<div class="recap-group-wrap r" id="recap-gallery-group">
+  <a href="media/photos/pix/about:2025/21.jpg"
+     data-pswp-width="3000"
+     data-pswp-height="1046"
+     data-cropped="true">
+    <img src="media/photos/pix/about:2025/21.jpg" alt="Official opening — JTM 2025" class="recap-group-img" />
+  </a>
+  <p class="rc-caption" style="color:rgba(255,255,255,0.3); text-align:center; margin-top:0.75rem;">Official opening of Journey to Malaysia 2025, Forrest Chase Perth CBD</p>
+</div>
 
-            <div class="pm-cell p3 r r2" data-l="Food Bazaar">
-              <img
-                src="media/photos/pix/about:2025/3.jpg"
-                alt="Food Bazaar"
-                class="pm-img"
-              />
-            </div>
+        </div>
+      </section>
 
-            <div class="pm-cell p4 r r1" data-l="Henna Workshop">
-              <img
-                src="media/photos/pix/about:2025/4.jpg"
-                alt="Henna Workshop"
-                class="pm-img"
-              />
-            </div>
+      <section class="rc-split rc-split--light" style="display:none;"></section>
 
-            <div class="pm-cell p5 r r2" data-l="Cultural Showcase">
-              <img
-                src="media/photos/pix/about:2025/5.jpg"
-                alt="Cultural Showcase"
-                class="pm-img"
-              />
+      <!-- PROGRAMME -->
+      <section class="rc-programme">
+        <div class="rc-programme-inner">
+          <div class="rc-prog-header r">
+            <div class="lbl" style="color: var(--gold2);">Main Stage</div>
+            <h2 class="rc-h" style="color: #fff;">The day, as it unfolded.</h2>
+          </div>
+          <div class="rc-timeline r r1">
+            <div class="rct-item">
+              <span class="rct-time">9:00 AM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Food Stalls &amp; Activities Open</p>
+              </div>
             </div>
+            <div class="rct-item rct-item--sub">
+              <span class="rct-time">All Day</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">DJ Rhythm'N'Flo — Malaysian Artists' Songs</p>
+              </div>
+            </div>
+            <div class="rct-item rct-item--key">
+              <span class="rct-time">10:00 AM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Opening Ceremony</p>
+                <p class="rct-desc">Welcome to Country · H.E. Ambassador Sharrina Abdullah · Lord Mayor Bruce Reynolds · Cultural Dance by UiTM · Malaysia Airlines Lucky Draw</p>
+              </div>
+            </div>
+            <div class="rct-item">
+              <span class="rct-time">12:15 PM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Lion Dance — Pak Mei Yaolin</p>
+              </div>
+            </div>
+            <div class="rct-item rct-item--key">
+              <span class="rct-time">12:30 – 3:00 PM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Cultural Performances</p>
+                <p class="rct-desc">Traditional Chinese Dance (Chung Wah) · Malaysian Cultural Dance (UiTM) · Sabah Indigenous Society of WA · Peranakan Dance · Silat (Gayong Australia) · Student Duet</p>
+              </div>
+            </div>
+            <div class="rct-item">
+              <span class="rct-time">3:10 PM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Traditional Outfit Fashion Show</p>
+              </div>
+            </div>
+            <div class="rct-item">
+              <span class="rct-time">3:40 PM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Surprise Performance</p>
+              </div>
+            </div>
+            <div class="rct-item">
+              <span class="rct-time">4:00 PM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Passport Lucky Draw Prize Giving</p>
+              </div>
+            </div>
+            <div class="rct-item">
+              <span class="rct-time">4:30 PM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">Cultural Performance by UiTM</p>
+              </div>
+            </div>
+            <div class="rct-item rct-item--end">
+              <span class="rct-time">6:00 PM</span>
+              <span class="rct-dot"></span>
+              <div class="rct-body">
+                <p class="rct-title">End of Event</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <div class="pm-cell p6 r r3" data-l="Closing Night">
-              <img
-                src="media/photos/pix/about:2025/6.jpg"
-                alt="Closing Night"
-                class="pm-img"
-              />
+        <!-- Performances moving collage -->
+        <div class="rc-collage">
+          <div class="rc-collage-row rc-collage-row--right">
+            <div class="rc-collage-track">
+              <img src="media/photos/pix/about:2025/7.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/8.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/9.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/10.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/11.JPG" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/12.jpg" class="rc-col-img" alt="" />
+              <!-- duplicates -->
+              <img src="media/photos/pix/about:2025/7.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/8.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/9.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/10.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/11.JPG" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/12.jpg" class="rc-col-img" alt="" />
             </div>
-            <div class="pm-cell p4 r r1" data-l="Henna Workshop">
-              <img
-                src="media/photos/pix/about:2025/7.jpg"
-                alt="Henna Workshop"
-                class="pm-img"
-              />
-            </div>
-
-            <div class="pm-cell p5 r r2" data-l="Cultural Showcase">
-              <img
-                src="media/photos/pix/about:2025/8.jpg"
-                alt="Cultural Showcase"
-                class="pm-img"
-              />
-            </div>
-
-            <div class="pm-cell p6 r r3" data-l="Closing Night">
-              <img
-                src="media/photos/pix/about:2025/9.jpg"
-                alt="Closing Night"
-                class="pm-img"
-              />
+          </div>
+          <div class="rc-collage-row rc-collage-row--left">
+            <div class="rc-collage-track">
+              <img src="media/photos/pix/about:2025/13.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/14.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/15.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/16.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/17.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/18.jpg" class="rc-col-img" alt="" />
+              <!-- duplicates -->
+              <img src="media/photos/pix/about:2025/13.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/14.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/15.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/16.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/17.jpg" class="rc-col-img" alt="" />
+              <img src="media/photos/pix/about:2025/18.jpg" class="rc-col-img" alt="" />
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      <!-- EVENT MAP -->
+      <section class="rc-split rc-split--muted">
+        <div class="rc-split-inner">
+          <div class="rc-text r">
+            <div class="lbl">Venue</div>
+            <h2 class="rc-h">Where it all<br />happened.</h2>
+            <p class="rc-p">Murray St Mall, Perth CBD — stretching from the GPO Building down to Forrest Chase. Seven food stalls, six activity booths, a main stage, and two seating zones.</p>
+            <div class="rc-vendor-cols">
+              <div>
+                <p class="rc-vendor-heading">Food Stalls</p>
+                <ol class="rc-vendor-list">
+                  <li>Karache by Sani</li>
+                  <li>Burger Satay Corner</li>
+                  <li>My Sataylicious</li>
+                  <li>Penang Dollah Kitchen</li>
+                  <li>Bunga Raya Satay</li>
+                  <li>Sedap Place</li>
+                  <li>Sup Meletup</li>
+                </ol>
+              </div>
+              <div>
+                <p class="rc-vendor-heading">Activities</p>
+                <ol class="rc-vendor-list">
+                  <li>Consulate-General of Malaysia</li>
+                  <li>Colouring &amp; Batik</li>
+                  <li>Photobooth</li>
+                  <li>Ministry of Agriculture</li>
+                  <li>Congkak &amp; Batu Seremban</li>
+                  <li>Badminton, Chapteh &amp; Sepak Takraw</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="rc-photo r r1">
+            <img src="media/photos/pix/about:2025/map.jpg" alt="JTM 2025 Event Map" class="rc-img rc-img--map" />
+          </div>
+        </div>
+      </section>
+</div>
     <!-- END TAB: RECAP -->
 
     <!-- TAB CONTENT: TEAM -->
@@ -1078,6 +1230,25 @@ tourism between both regions. It’s where Malaysians and Australians come toget
             .forEach((el) => el.classList.remove("touched"));
         }
       });
+      /* PhotoSwipe — recap gallery */
+function initPhotoSwipe() {
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#recap-gallery, #recap-gallery-group',
+    children: 'a[data-pswp-width]',
+    pswpModule: PhotoSwipe,
+    bgOpacity: 0.9,
+    showHideAnimationType: 'zoom',
+  });
+  lightbox.init();
+}
+
+// Init on page load and after tab switch to recap
+document.addEventListener('DOMContentLoaded', initPhotoSwipe);
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-go-tab="recap"]') || e.target.closest('[data-tab="recap"]')) {
+    setTimeout(initPhotoSwipe, 150);
+  }
+});
     </script>
 
     <!-- COUNTDOWN POPUP -->
@@ -1149,5 +1320,7 @@ tourism between both regions. It’s where Malaysians and Australians come toget
         </div>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/umd/photoswipe.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/umd/photoswipe-lightbox.umd.min.js"></script>
   </body>
 </html>
