@@ -1219,6 +1219,28 @@ tourism between both regions. It’s where Malaysians and Australians come toget
         });
       });
 
+      // Countdown to JTM 2026 — Sat 21 Nov, 9am Perth time (AWST, UTC+8)
+      const EVENT_START = new Date("2026-11-21T09:00:00+08:00").getTime();
+
+      let countdownTimer;
+
+      function updateCountdown() {
+        const diff = Math.max(0, EVENT_START - Date.now());
+        const pad = (n) => String(n).padStart(2, "0");
+
+        document.getElementById("d").textContent = pad(Math.floor(diff / 86400000));
+        document.getElementById("h").textContent = pad(Math.floor((diff / 3600000) % 24));
+        document.getElementById("m").textContent = pad(Math.floor((diff / 60000) % 60));
+        document.getElementById("s").textContent = pad(Math.floor((diff / 1000) % 60));
+
+        if (diff === 0) clearInterval(countdownTimer);
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        updateCountdown();
+        countdownTimer = setInterval(updateCountdown, 1000);
+      });
+
       // Newsletter form submit
       async function handlePopupSub(e) {
         e.preventDefault();
@@ -1318,9 +1340,8 @@ document.addEventListener('click', (e) => {
 
         <!-- Heading -->
         <h2 class="popup-head">
-          Journey to Malaysia<br /><span>2026 is coming.</span>
+          Journey to Malaysia <span>2026 is coming.</span>
         </h2>
-        <p class="popup-sub">The best is yet to come... Stay Tuned!</p>
 
         <!-- Countdown units -->
         <div class="popup-units">
@@ -1340,6 +1361,15 @@ document.addEventListener('click', (e) => {
             <span class="cd-n" id="s">??</span>
             <span class="cd-l">Secs</span>
           </div>
+        </div>
+
+        <!-- Event details -->
+        <div class="popup-details">
+          <span>Sat 21 Nov</span>
+          <span class="popup-details-sep">♦</span>
+          <span>9am – 6pm</span>
+          <span class="popup-details-sep">♦</span>
+          <span>Forrest Chase, Perth</span>
         </div>
 
         <!-- Divider -->
