@@ -1,0 +1,9 @@
+# macOS Finder files
+.DS_Store
+
+# Working files for the 2026 rebrand: brand PDF, AI animation sources,
+# master/print logo files. Kept locally, not published with the site.
+design-source/
+
+# Local Claude Code settings
+.claude/settings.local.json
