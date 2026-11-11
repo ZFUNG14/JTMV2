@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="media/logo/2026/apple-touch-icon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css" />
   </head>
-  <body>
+  <body data-tab="2026">
     <!-- NAV -->
     <nav id="nav">
       <a href="#" class="n-logo">
@@ -39,8 +39,9 @@
         </div>
       </a>
       <ul class="n-links">
+        <li><a href="#2026" data-go-tab="2026">JTM 2026</a></li>
         <li><a href="#about" data-go-tab="about">About</a></li>
-        <li><a href="#recap" data-go-tab="recap">JTM 2025</a></li>
+        <li><a href="#recap" data-go-tab="recap">2025 Recap</a></li>
         <li><a href="#team" data-go-tab="team">Team</a></li>
         <li class="n-pill"><a href="#join">Get Involved</a></li>
       </ul>
@@ -51,8 +52,9 @@
 
     <!-- MOBILE DRAWER -->
     <div class="n-drawer" id="drawer">
+      <a href="#2026" class="drawer-link" data-go-tab="2026">JTM 2026</a>
       <a href="#about" class="drawer-link" data-go-tab="about">About</a>
-      <a href="#recap" class="drawer-link" data-go-tab="recap">JTM 2025</a>
+      <a href="#recap" class="drawer-link" data-go-tab="recap">2025 Recap</a>
       <a href="#team" class="drawer-link" data-go-tab="team">Team</a>
       <a href="#join" class="drawer-link drawer-cta">Get Involved</a>
     </div>
@@ -94,8 +96,8 @@
           won't forget!
         </p>
         <div class="hero-btns">
-          <a href="#recap" class="btn btn-gold" data-go-tab="recap"
-            >↓ Relive 2025</a
+          <a href="#2026" class="btn btn-gold" data-go-tab="2026"
+            >↓ What's on in 2026</a
           >
           <a href="#join" class="btn btn-ghost">Get Involved</a>
         </div>
@@ -158,16 +160,136 @@
     </div>
 
     <!-- TAB SWITCHER -->
-    <div class="tab-switcher-wrap" data-active="about">
+    <div class="tab-switcher-wrap" data-active="2026">
       <div class="tab-switcher">
-        <button class="tab-btn active" data-tab="about">About</button>
-        <button class="tab-btn" data-tab="recap">JTM 2025</button>
+        <button class="tab-btn active" data-tab="2026">JTM 2026</button>
+        <button class="tab-btn" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="recap">2025 Recap</button>
         <button class="tab-btn" data-tab="team">Team</button>
       </div>
     </div>
 
+    <!-- TAB CONTENT: JTM 2026 -->
+    <div class="tab-panel active" id="tab-2026">
+      <section id="jtm-2026">
+        <div class="j26-inner">
+
+          <!-- Essentials: what, when, where -->
+          <div class="j26-hero r">
+            <div class="j26-hero-text">
+              <h2 class="section-h">
+                See you at
+                <em class="cactus-word">Forrest Place<svg class="cactus-icon" viewBox="0 0 40 64" aria-hidden="true"><rect x="14" y="2" width="12" height="62" rx="6"/><rect x="3" y="12" width="9" height="24" rx="4.5"/><rect x="3" y="27" width="16" height="9" rx="4.5"/><rect x="28" y="20" width="9" height="20" rx="4.5"/><rect x="21" y="31" width="16" height="9" rx="4.5"/></svg></em>
+              </h2>
+              <p class="j26-intro">
+                Journey to Malaysia is back for 2026, bigger and brighter. A
+                full day of Malaysian food, performances and culture in the
+                heart of Perth. Bring the family, bring your friends, bring
+                your appetite!
+              </p>
+
+              <dl class="j26-facts">
+                <div><dt>Date</dt><dd>Saturday, 21 November 2026</dd></div>
+                <div><dt>Time</dt><dd>9am – 6pm</dd></div>
+                <div><dt>Venue</dt><dd>Forrest Place, Perth CBD</dd></div>
+              </dl>
+
+              <div class="j26-countdown" aria-label="Time until Journey to Malaysia 2026">
+                <div><span data-cd="d">--</span><small>Days</small></div>
+                <div><span data-cd="h">--</span><small>Hours</small></div>
+                <div><span data-cd="m">--</span><small>Mins</small></div>
+                <div><span data-cd="s">--</span><small>Secs</small></div>
+              </div>
+
+            </div>
+
+            <img
+              class="j26-hero-stamp"
+              src="media/logo/2026/stamps/forrest-place.webp"
+              alt="Forrest Place, Perth — Journey to Malaysia, 21.11.2026 stamp"
+            />
+          </div>
+
+          <!-- What to expect -->
+          <div class="j26-block">
+            <h3 class="j26-h r">What to expect</h3>
+            <div class="j26-expect">
+              <div class="j26-card r">
+                <img src="media/logo/2026/stamps/kopi-teh-tarik.webp" alt="" />
+                <h4>Food &amp; drinks</h4>
+                <p>Hawker favourites, kopi and teh tarik from local Malaysian vendors.</p>
+              </div>
+              <div class="j26-card r r1">
+                <img src="media/logo/2026/stamps/bunga-raya.webp" alt="" />
+                <h4>Culture &amp; performances</h4>
+                <p>Traditional dance, music and live acts on the main stage all day.</p>
+              </div>
+              <div class="j26-card r r2">
+                <img src="media/logo/2026/stamps/wau-bulan.webp" alt="" />
+                <h4>Crafts &amp; activities</h4>
+                <p>Traditional games, hands-on workshops and photo moments.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Getting there -->
+          <div class="j26-block j26-getting r">
+            <img
+              class="j26-getting-stamp"
+              src="media/logo/2026/stamps/arrived-tiba.webp"
+              alt=""
+            />
+            <div>
+              <h3 class="j26-h">Getting there</h3>
+              <p>
+                Getting to us is easy! Forrest Place is in the heart of the
+                city, just across from Perth Station and above Perth Underground. Hopping on a train is the simplest way to arrive. There is lots of
+                buses stop nearby too.
+              </p>
+              <p>Driving in? These car parks are only a short stroll away:</p>
+              <ul class="j26-parking">
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Wilson+Parking+Raine+Square+Perth" target="_blank" rel="noopener">Wilson Parking, Raine Square</a>
+                  <span>4 min walk</span>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=CPP+Citiplace+Car+Park+Perth" target="_blank" rel="noopener">CPP Citiplace</a>
+                  <span>6 min walk</span>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=CPP+Pier+Street+Car+Park+Perth" target="_blank" rel="noopener">CPP Pier Street</a>
+                  <span>7 min walk</span>
+                </li>
+              </ul>
+              <a
+                class="j26-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Forrest+Place+Perth+WA"
+                target="_blank"
+                rel="noopener"
+                >Open in Google Maps →</a
+              >
+            </div>
+          </div>
+
+          <!-- Details still to come: swap each card's text in as info arrives -->
+          <div class="j26-block">
+            <h3 class="j26-h r">More details landing soon</h3>
+            <div class="j26-soon">
+              <div class="j26-soon-card r"><h4>Stage programme</h4></div>
+              <div class="j26-soon-card r r1"><h4>Food &amp; vendors</h4></div>
+              <div class="j26-soon-card r r2"><h4>Performers</h4></div>
+              <div class="j26-soon-card r r3"><h4>Site map</h4></div>
+              <div class="j26-soon-card r"><h4>Lucky Draw</h4></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+    <!-- END TAB: JTM 2026 -->
+
     <!-- TAB CONTENT: ABOUT -->
-    <div class="tab-panel active" id="tab-about">
+    <div class="tab-panel" id="tab-about">
       <!-- ABOUT -->
       <section id="about">
         <div class="about-wrap">
@@ -328,6 +450,12 @@ tourism between both regions. It’s where Malaysians and Australians come toget
 </div>
 
             <div class="recap-hero-text r r2">
+              <!-- 2025 student committee logo, kept as a keepsake of last year -->
+              <img
+                class="recap-committee-logo"
+                src="media/logo/2025/jtm-2025-committee-logo.webp"
+                alt="Journey to Malaysia 2025 student committee logo"
+              />
               <h3 class="recap-hero-h">A historic first<br />for Perth.</h3>
               <p class="recap-hero-p">
                 Graced by <strong>H.E. Ambassador Sharrina Abdullah</strong> and
@@ -548,6 +676,66 @@ tourism between both regions. It’s where Malaysians and Australians come toget
     </div>
   </div>
 </section>
+
+<!-- 2025 SPONSORS: everyone who supported last year, kept with the recap -->
+<section class="rc-sponsors">
+  <div class="rc-sponsors-inner">
+    <div class="sponsors-head r">
+      <h2 class="section-h">2025 Partners &amp; Sponsors</h2>
+      <p class="section-sub">
+        Thank you to everyone who made our first Journey to Malaysia possible!
+      </p>
+    </div>
+          <div class="sp-logo-row r r1">
+            <div class="sp-logo-item" data-name="Australia Malaysia Business Chamber: WA Chapter">
+              <img src="media/logo/sponsors/AMBC.png" alt="AMBC" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="UEM Sunrise">
+              <img src="media/logo/sponsors/UEM.png" alt="UEM Sunrise" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="Malaysia Airlines">
+              <img src="media/logo/sponsors/MH.png" alt="Malaysia Airlines" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="Ministry of Agriculture and Food Security of Malaysia">
+              <img src="media/logo/sponsors/food.png" alt="Ministry of Agriculture and Food Security of Malaysia" class="sp-bare-img" />
+            </div>
+          </div>
+          <div class="sp-logo-row r r2">
+            <div class="sp-logo-item" data-name="Lepak Street Corner">
+              <img src="media/logo/sponsors/vendors/LepakSatayCorner.png" alt="Lepak Street Corner" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="Penang Dollah Kitchen">
+              <img src="media/logo/sponsors/vendors/PenangDollah.png" alt="Penang Dollah Kitchen" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="Sedap Place">
+              <img src="media/logo/sponsors/vendors/sedapPlace.png" alt="Sedap Place" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="Karache By Sani">
+              <img src="media/logo/sponsors/vendors/karache.png" alt="Karache By Sani" class="sp-bare-img" />
+            </div>
+          </div>
+          <div class="sp-logo-row r r3">
+            <div class="sp-logo-item" data-name="Michelle Mok Creates">
+              <img src="media/logo/sponsors/vendors/MichelleMok.png" alt="Michelle Mok Creates" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="WA Photobooth">
+              <img src="media/logo/sponsors/vendors/WAPhotobooth.png" alt="WA Photobooth" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="My Sataylicious">
+              <img src="media/logo/sponsors/vendors/My Sataylicious Logo.png" alt="My Sataylicious" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="Bunga Raya Satay">
+              <img src="media/logo/sponsors/vendors/bungaraya.jpg" alt="Bunga Raya Satay" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="Sup Meletup">
+              <img src="media/logo/sponsors/vendors/SupMeletup.png" alt="Sup Meletup" class="sp-bare-img" />
+            </div>
+            <div class="sp-logo-item" data-name="NetX Arena Joondalup">
+              <img src="media/logo/sponsors/NetXArena.png" alt="NetX Arena Joondalup" class="sp-bare-img" />
+            </div>
+          </div>
+  </div>
+</section>
 </div>
     <!-- END TAB: RECAP -->
 
@@ -624,37 +812,6 @@ tourism between both regions. It’s where Malaysians and Australians come toget
         <div class="comm-photo-caption">Thank you to all student volunteers for making JTM 2025 possible!</div>
         </div>
 
-          <div class="comm-quotes r r1">
-            <!-- 
-            <div class="cq-inner">
-              <span class="cq-mark">"</span>
-              <blockquote class="cq-text">
-                Journey to Malaysia is more than an event. Instead, it's a love
-                letter to our culture, our home, and the community that keeps us
-                connected no matter how far we are from Malaysia.
-              </blockquote>
-              <div class="cq-attr">
-                <span class="cq-name">— Genevieve Cheng</span>
-                <span class="cq-role"
-                  >Chairperson, Journey to Malaysia 2025</span
-                >
-              </div>
-            </div>
-
-            <div class="cq-inner">
-              <span class="cq-mark">"</span>
-              <blockquote class="cq-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Distinctio, officia recusandae similique omnis mollitia harum
-                reprehenderit optio delectus iure atque!
-              </blockquote>
-              <div class="cq-attr">
-                <span class="cq-name">— Ms Nur Eliza Jemal Zainal</span>
-                <span class="cq-role">Consulate General Perth 2025</span>
-              </div>
-            </div>                        -->
-          </div>
-
           <div class="collage-marquee">
             <div class="cm-row reverse">
               <div class="cm-tile">
@@ -679,7 +836,7 @@ tourism between both regions. It’s where Malaysians and Australians come toget
                 <div class="cm-tile-caption">Information Booth</div>
               </div>
               <div class="cm-tile">
-                <img src="media/photos/pix/comm/26.JPG "/>
+                <img src="media/photos/pix/comm/26.JPG" />
               </div>
               <div class="cm-tile">
                 <img src="media/photos/pix/comm/20.JPG" />
@@ -694,7 +851,7 @@ tourism between both regions. It’s where Malaysians and Australians come toget
                 <img src="media/photos/pix/comm/23.JPG" />
               </div>
               <div class="cm-tile">
-                <img src="media/photos/pix/comm/6.JPG" />
+                <img src="media/photos/pix/comm/6.jpg" />
               </div>
             </div>
           </div>
@@ -702,35 +859,24 @@ tourism between both regions. It’s where Malaysians and Australians come toget
           <div class="demo-divider"></div>
       </section>
 
-      <section id="sponsors">
-        <div class="sponsors-inner">
-          <div class="sponsors-head r">
-            <h2 class="section-h">Partners & Sponsors</h2>
-            <p class="section-sub">
-              Journey to Malaysia 2025 was made possible with the generous
-              support of these organisations.
-            </p>
-          </div>
+    </div>
+    <!-- END TAB: TEAM -->
 
-          <!-- Row 1: Main supporters -->
-          <div class="sp-logo-row r r1">
-            <div
-              class="sp-logo-item"
-              data-name="Australia Malaysia Business Chamber: WA Chapter"
-            >
-              <img
-                src="media/logo/sponsors/AMBC.png"
-                alt="AMBC"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="UEM Group">
-              <img
-                src="media/logo/sponsors/UEM.png"
-                alt="UEM"
-                class="sp-bare-img"
-              />
-            </div>
+    <!-- SPONSORS: shown on every tab, just before Get Involved -->
+    <section id="sponsors">
+      <div class="sponsors-inner">
+        <div class="sponsors-head r">
+          <h2 class="section-h">Partners & Sponsors</h2>
+          <p class="section-sub">
+            Journey to Malaysia 2026 is made possible with the generous
+            support of these organisations.
+          </p>
+        </div>
+
+        <!-- Sponsor tiers: Platinum > Gold > Silver (logo size follows rank) -->
+        <div class="sp-tier sp-tier--platinum r r1">
+          <p class="sp-tier-label">Platinum Sponsor</p>
+          <div class="sp-logo-row">
             <div class="sp-logo-item" data-name="Malaysia Airlines">
               <img
                 src="media/logo/sponsors/MH.png"
@@ -738,111 +884,62 @@ tourism between both regions. It’s where Malaysians and Australians come toget
                 class="sp-bare-img"
               />
             </div>
-            <div
-              class="sp-logo-item"
-              data-name="Ministry of Agriculture and Food Security of Malaysia"
-            >
-              <img
-                src="media/logo/sponsors/food.png"
-                alt="Food Partner"
-                class="sp-bare-img"
-              />
-            </div>
-          </div>
-          <div class="sp-logo-row r r1">
-            <div class="sp-logo-item" data-name="Lepak Street Corner">
-              <img
-                src="media/logo/sponsors/vendors/LepakSatayCorner.png"
-                alt="Lepak Street Corner"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="Penang Dollah Kitchen">
-              <img
-                src="media/logo/sponsors/vendors/PenangDollah.png"
-                alt="Penang Dollah"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="Sedap Place">
-              <img
-                src="media/logo/sponsors/vendors/sedapPlace.png"
-                alt="Sedap Place"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="Karache By Sani">
-              <img
-                src="media/logo/sponsors/vendors/karache.png"
-                alt="Karache"
-                class="sp-bare-img"
-              />
-            </div>
-          </div>
-
-          <div class="sp-logo-row r r2">
-            <div class="sp-logo-item" data-name="Michelle Mok Creates">
-              <img
-                src="media/logo/sponsors/vendors/MichelleMok.png"
-                alt="Michelle Mok"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="WA Photobooth">
-              <img
-                src="media/logo/sponsors/vendors/WAPhotobooth.png"
-                alt="WA Photobooth"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="My Sataylicious">
-              <img
-                src="media/logo/sponsors/vendors/My Sataylicious Logo.png"
-                alt="My Sataylicious"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="Bunga Raya Satay">
-              <img
-                src="media/logo/sponsors/vendors/bungaraya.jpg"
-                alt="Bunga Raya"
-                class="sp-bare-img"
-              />
-            </div>
-            <div class="sp-logo-item" data-name="Sup Meletup">
-              <img
-                src="media/logo/sponsors/vendors/SupMeletup.png"
-                alt="Sup Meletup"
-                class="sp-bare-img"
-              />
-            </div>
-
-            <div class="sp-logo-item" data-name="NetX Arena Joondalup">
-              <img
-                src="media/logo/sponsors/NetXArena.png"
-                alt="NetXArena"
-                class="sp-bare-img"
-              />
-            </div>
-          </div>
-          <!-- CTA -->
-          <div class="sp-cta r">
-            <div class="sp-cta-text">
-              <h3>Interested in sponsoring Journey to Malaysia 2026?</h3>
-              <p>
-                We offer a range of partnership packages. From logo placement
-                and dedicated stalls to on-stage recognition and social media
-                shoutouts.
-              </p>
-            </div>
-            <a href="#join" class="btn btn-gold">Become a Sponsor →</a>
           </div>
         </div>
-      </section>
-      <!-- JOIN -->
-    </div>
-    <!-- END TAB: TEAM -->
 
+        <div class="sp-tier sp-tier--gold r r1">
+          <p class="sp-tier-label">Gold Sponsors</p>
+          <div class="sp-logo-row">
+            <div class="sp-logo-item" data-name="EXAL Group">
+              <img
+                src="media/logo/sponsors/EXAL.webp"
+                alt="EXAL Group"
+                class="sp-bare-img"
+              />
+            </div>
+            <!-- TODO: swap in the Finbar logo once we have the file -->
+            <div class="sp-logo-item" data-name="Finbar">
+              <span class="sp-wordmark">Finbar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sp-tier sp-tier--silver r r2">
+          <p class="sp-tier-label">Silver Sponsors</p>
+          <div class="sp-logo-row">
+            <div class="sp-logo-item" data-name="UEM Sunrise">
+              <img
+                src="media/logo/sponsors/UEM.png"
+                alt="UEM Sunrise"
+                class="sp-bare-img"
+              />
+            </div>
+            <div class="sp-logo-item" data-name="SKS Group">
+              <img
+                src="media/logo/sponsors/SKS.webp"
+                alt="SKS Group"
+                class="sp-bare-img"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="sp-cta r">
+          <div class="sp-cta-text">
+            <h3>Interested in sponsoring Journey to Malaysia 2026?</h3>
+            <p>
+              We offer a range of partnership packages. From logo placement
+              and dedicated stalls to on-stage recognition and social media
+              shoutouts.
+            </p>
+          </div>
+          <a href="#join" class="btn btn-gold">Become a Sponsor →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
     <section id="join">
       <div class="join-grid-bg"></div>
       <div class="join-inner">
@@ -990,16 +1087,6 @@ tourism between both regions. It’s where Malaysians and Australians come toget
                 class="ft-partner-img"
               />
             </div>
-            <div
-              class="sp-logo-item"
-              data-name="Journey to Malaysia Student Committee 2025"
-            >
-              <img
-                src="media/logo/sponsors/JTMLogo.png"
-                alt="Journey to Malaysia"
-                class="ft-partner-img"
-              />
-            </div>
           </div>
         </div>
 
@@ -1130,6 +1217,9 @@ tourism between both regions. It’s where Malaysians and Australians come toget
           tabSwitcherWrap.setAttribute("data-active", tabName);
         }
 
+        // Lets CSS react to the open tab (e.g. no 2026 sponsors on the 2025 recap)
+        document.body.dataset.tab = tabName;
+
         // Re-trigger reveal animations for elements now visible
         const activePanel = document.getElementById(`tab-${tabName}`);
         if (activePanel) {
@@ -1174,7 +1264,7 @@ tourism between both regions. It’s where Malaysians and Australians come toget
       // On page load, check the URL hash to open the right tab
       window.addEventListener("DOMContentLoaded", () => {
         const hash = window.location.hash.replace("#", "");
-        const validTabs = ["about", "recap", "team"];
+        const validTabs = ["2026", "about", "recap", "team"];
         if (validTabs.includes(hash)) {
           activateTab(hash, { scrollToTop: false });
         }
@@ -1293,10 +1383,17 @@ tourism between both regions. It’s where Malaysians and Australians come toget
         const diff = Math.max(0, EVENT_START - Date.now());
         const pad = (n) => String(n).padStart(2, "0");
 
-        document.getElementById("d").textContent = pad(Math.floor(diff / 86400000));
-        document.getElementById("h").textContent = pad(Math.floor((diff / 3600000) % 24));
-        document.getElementById("m").textContent = pad(Math.floor((diff / 60000) % 60));
-        document.getElementById("s").textContent = pad(Math.floor((diff / 1000) % 60));
+        const parts = {
+          d: pad(Math.floor(diff / 86400000)),
+          h: pad(Math.floor((diff / 3600000) % 24)),
+          m: pad(Math.floor((diff / 60000) % 60)),
+          s: pad(Math.floor((diff / 1000) % 60)),
+        };
+        // Popup boxes (#d, #h…) and the JTM 2026 tab ([data-cd="d"]…)
+        for (const [unit, value] of Object.entries(parts)) {
+          document.getElementById(unit).textContent = value;
+          document.querySelectorAll(`[data-cd="${unit}"]`).forEach((el) => (el.textContent = value));
+        }
 
         if (diff === 0) clearInterval(countdownTimer);
       }

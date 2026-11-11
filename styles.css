@@ -24,6 +24,8 @@
 --cream-dark: #ebdcbc;
 --gold-light: #e0c62a;
 --slate: #474d6e;
+--cactus-green: #2f9e44;   /* Forrest Place's "Grow Your Own" cactus */
+--cactus-shadow: #1d6b2c;
 
 /* 2. Site-wide roles */
 --bg: var(--passport-cream);        /* main page background */
@@ -167,10 +169,10 @@ list-style: none;
 .n-links a {
 color: color-mix(in srgb, var(--on-dark) 85%, transparent);
 text-decoration: none;
-font-size: clamp(0.65rem, 0.9vw, 0.75rem);
-font-weight: 500;
-letter-spacing: 0.1em;
-text-transform: uppercase;
+font-family: var(--f-serif);
+font-size: clamp(0.9rem, 1.05vw, 1rem);
+font-weight: 700;
+letter-spacing: 0.01em;
 padding: 0.45rem 0.9rem;
 border-radius: 100px;
 transition: all 0.2s;
@@ -1102,7 +1104,7 @@ body {
     font-size: 1.5rem;
 }
 .n-links a {
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     padding: 0.55rem 1.1rem;
 }
 .ht-small {
@@ -1636,72 +1638,7 @@ body {
   transform: scale(1.02);
 }
 
-.cq-inner {
-  position: relative;
-  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
-  background: var(--cream);
-  border: 1px solid var(--bg2);
-  border-radius: 8px;
-}
-
-.cq-mark {
-  font-family: var(--f-serif);
-  font-size: clamp(4rem, 8vw, 7rem);
-  color: var(--gold);
-  opacity: 0.25;
-  line-height: 0;
-  position: absolute;
-  top: 2.5rem;
-  left: 1.5rem;
-}
-
-.cq-text {
-  font-family: var(--f-serif);
-  font-style: italic;
-  font-size: calc(clamp(1rem, 1.6vw, 1.3rem) * var(--text-scale));
-  color: var(--ink);
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.cq-attr {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.cq-name {
-  font-family: var(--f-head);
-  font-weight: 700;
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
-  color: var(--ink);
-  letter-spacing: 0.05em;
-}
-
-.cq-role {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.comm-quotes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  max-width: var(--max-w);
-  margin: 0 auto;
-}
-
 /* Collapse to single column on mobile */
-@media (max-width: 768px) {
-  .comm-quotes {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* Partners centre column */
 .ft-partners {
@@ -1977,19 +1914,58 @@ footer {
   filter: grayscale(0%);
 }
 
-/* Small screens: three logos per row in equal slots, so they line up in
-   columns; a leftover logo sits centred underneath */
-@media (max-width: 768px) {
-  .sp-logo-row {
-    gap: 1.25rem 0.75rem;
-  }
-  .sp-logo-row .sp-logo-item {
-    flex: 0 0 calc((100% - 1.5rem) / 3);
-  }
-  .sp-logo-row .sp-bare-img {
-    height: 88px;
-    max-width: 100%;
-  }
+/* Sponsor tiers: a sub-heading names the tier, and logo size follows rank */
+.sp-tier {
+  text-align: center;
+  margin-bottom: clamp(2.25rem, 5vw, 3.25rem);
+}
+
+.sp-tier-label {
+  font-family: var(--f-serif);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.sp-tier .sp-logo-row {
+  margin-bottom: 0;
+  flex-wrap: nowrap;
+  gap: clamp(1.5rem, 7vw, 5rem);
+}
+
+.sp-tier .sp-bare-img {
+  max-width: none;
+  width: auto;
+  filter: none;
+  opacity: 1;
+}
+
+.sp-tier--platinum .sp-bare-img {
+  height: clamp(80px, 11vw, 140px);
+  max-width: min(440px, 80vw);
+  object-fit: contain;
+}
+
+.sp-tier--gold .sp-bare-img {
+  height: clamp(54px, 7vw, 92px);
+  max-width: 40vw;
+  object-fit: contain;
+}
+
+.sp-tier--silver .sp-bare-img {
+  height: clamp(46px, 5.5vw, 72px);
+  max-width: 38vw;
+  object-fit: contain;
+}
+
+/* Text stand-in until we have the sponsor's logo file */
+.sp-wordmark {
+  font-family: var(--f-head);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  line-height: 1;
 }
 
 .ft-credit {
@@ -2001,7 +1977,8 @@ footer {
 
 .ft-credit a {
   color: color-mix(in srgb, var(--on-dark) 85%, transparent);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   transition: color 0.2s;
 }
 
@@ -2165,8 +2142,8 @@ footer {
   bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: var(--forest);
-  color: var(--on-dark);
+  background: var(--malam-navy);
+  color: var(--passport-cream); /* fixed: --on-dark is navy inside light sections */
   font-family: var(--f-head);
   font-size: 0.65rem;
   font-weight: 600;
@@ -3200,7 +3177,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-
 /* ── PILLAR CARDS: always one row ──
    Tablets keep three across; phones swipe sideways through the
    same row instead of stacking. */
@@ -3288,4 +3264,402 @@ footer {
 #sponsors::before {
   right: auto;
   left: 0;
+}
+
+/* 2025 keepsake: the student committee logo above "A historic first" */
+.recap-committee-logo {
+  width: clamp(90px, 9vw, 120px);
+  height: auto;
+  margin-bottom: 1.25rem;
+  transform: rotate(-6deg);
+}
+
+/* 2026 sponsors stay out of the 2025 recap */
+body[data-tab="recap"] #sponsors {
+  display: none;
+}
+
+/* ══════════════════════════════
+   JTM 2026 TAB
+══════════════════════════════ */
+#tab-2026,
+.tab-switcher-wrap[data-active="2026"] {
+  background: var(--bg);
+}
+
+#jtm-2026 {
+  padding: var(--section-y) var(--pad-x);
+  background: var(--bg);
+}
+
+.j26-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* Essentials */
+.j26-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  margin-bottom: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.j26-hero .section-h {
+  margin-bottom: 1.25rem;
+}
+
+.j26-intro {
+  font-size: calc(clamp(0.9rem, 1.15vw, 1rem) * var(--text-scale));
+  line-height: 1.8;
+  color: var(--mid);
+  max-width: 38rem;
+  margin-bottom: 1.75rem;
+}
+
+.j26-facts {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.j26-facts div {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.j26-facts dt {
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.j26-facts dd {
+  font-family: var(--f-serif);
+  font-weight: 700;
+  font-size: calc(clamp(1.05rem, 1.6vw, 1.25rem) * var(--text-scale));
+  color: var(--ink);
+}
+
+.j26-countdown {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.j26-countdown div {
+  min-width: 4.5rem;
+  padding: 0.6rem 0.5rem 0.5rem;
+  text-align: center;
+  background: var(--malam-navy);
+  color: var(--passport-cream);
+  border-radius: 6px;
+}
+
+.j26-countdown span {
+  display: block;
+  font-family: var(--f-head);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.j26-countdown small {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--kuning-gold);
+}
+
+.j26-hero-stamp {
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+  transform: rotate(-6deg);
+}
+
+/* Blocks */
+.j26-block {
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.j26-h {
+  font-family: var(--f-serif);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+/* What to expect */
+.j26-expect {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.j26-card {
+  text-align: center;
+}
+
+.j26-card img {
+  width: 100%;
+  max-width: 150px;
+  height: 130px;
+  object-fit: contain;
+  margin: 0 auto 0.9rem;
+  display: block;
+}
+
+.j26-card:nth-child(odd) img { transform: rotate(-5deg); }
+.j26-card:nth-child(even) img { transform: rotate(4deg); }
+
+.j26-card h4,
+.j26-soon-card h4 {
+  font-family: var(--f-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.j26-card p,
+.j26-soon-card p,
+.j26-getting p {
+  font-size: calc(0.88rem * var(--text-scale));
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+/* Getting there */
+.j26-getting {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--bg2);
+  border-radius: 8px;
+}
+
+.j26-getting-stamp {
+  width: 100%;
+  transform: rotate(-4deg);
+}
+
+.j26-getting p {
+  max-width: 40rem;
+  margin-bottom: 0.9rem;
+}
+
+.j26-link {
+  font-family: var(--f-body);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Coming soon: dashed cards with a tilted stamp, ready to be filled in */
+.j26-soon {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.j26-soon-card {
+  position: relative;
+  padding: 1.25rem 1rem 2.75rem;
+  border: 2px dashed color-mix(in srgb, var(--ink) 35%, transparent);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.j26-soon-card::after {
+  content: "Coming soon";
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border: 2px solid var(--sambal-orange);
+  border-radius: 4px;
+  color: var(--sambal-orange);
+  font-family: var(--f-head);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+}
+
+@media (max-width: 1024px) {
+  .j26-soon {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .j26-hero {
+    grid-template-columns: 1fr;
+  }
+  .j26-hero-stamp {
+    max-width: 260px;
+    order: -1;
+  }
+  /* Phones: centre the essentials, with each label stacked over its value */
+  .j26-hero-text {
+    text-align: center;
+  }
+  .j26-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .j26-facts div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+  .j26-countdown {
+    justify-content: center;
+  }
+  .j26-expect {
+    grid-template-columns: 1fr;
+  }
+  /* Phones: stamp on the left spanning both rows, title and text beside it */
+  .j26-card {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1rem;
+    align-items: center;
+    text-align: left;
+  }
+  .j26-card img {
+    grid-row: 1 / span 2;
+    height: 88px;
+    margin: 0;
+  }
+  .j26-card h4 {
+    align-self: end;
+  }
+  .j26-card p {
+    grid-column: 2;
+    align-self: start;
+  }
+  .j26-getting {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .j26-getting-stamp {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  .j26-soon {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 2025 sponsors, kept with the recap */
+.rc-sponsors {
+  padding: var(--section-y) var(--pad-x);
+  background: var(--bg);
+}
+
+.rc-sponsors-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rc-sponsors .sponsors-head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* Phones: three logos per row in equal slots */
+@media (max-width: 768px) {
+  .rc-sponsors .sp-logo-row {
+    gap: 1.25rem 0.75rem;
+  }
+  .rc-sponsors .sp-logo-item {
+    flex: 0 0 calc((100% - 1.5rem) / 3);
+  }
+  .rc-sponsors .sp-bare-img {
+    height: 88px;
+    max-width: 100%;
+  }
+}
+
+/* "Forrest Place" in the green of the Forrest Place cactus
+   ("Grow Your Own" by James Angus): glossy green with a little 3D edge */
+.cactus-word {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.12em;
+  font-family: var(--f-head);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--cactus-green);
+  text-shadow: 0 0.05em 0 var(--cactus-shadow);
+  white-space: nowrap;
+}
+
+.cactus-icon {
+  height: 0.95em;
+  width: auto;
+  fill: var(--cactus-green);
+  filter: drop-shadow(0 0.05em 0 var(--cactus-shadow));
+  transform: rotate(6deg);
+  margin-bottom: 0.08em;
+}
+
+/* Getting there: car park list */
+.j26-parking {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.25rem 0 0.9rem;
+  padding: 0;
+}
+
+.j26-parking li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--bg);
+  border-left: 3px solid var(--kuning-gold);
+  border-radius: 4px;
+}
+
+.j26-parking a {
+  font-family: var(--f-serif);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.j26-parking a::after {
+  content: " ↗";
+  font-size: 0.85em;
+}
+
+.j26-parking span {
+  font-size: calc(0.85rem * var(--text-scale));
+  color: var(--mid);
+}
+
+@media (max-width: 768px) {
+  .j26-parking li {
+    text-align: left;
+  }
 }
